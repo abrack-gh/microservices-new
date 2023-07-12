@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.0.5</version>
+    <version>3.0.0</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
@@ -20,15 +20,13 @@
     <module>product-service</module>
     <module>order-service</module>
     <module>inventory-service</module>
-      <module>discovery-server</module>
-    <module>discovery-server</module>
     <module>discovery-server</module>
   </modules>
 
   <properties>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
-    <spring-cloud.version>2022.0.1</spring-cloud.version>
+    <spring-cloud.version>2021.0.3</spring-cloud.version>
     <testcontainers.version>1.17.6</testcontainers.version>
   </properties>
 
@@ -37,7 +35,7 @@
       <dependency>
         <groupId>org.testcontainers</groupId>
         <artifactId>testcontainers-bom</artifactId>
-        <version>${testcontainers.version}</version>
+        <version>1.16.3</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -51,17 +49,6 @@
     </dependencies>
   </dependencyManagement>
 
-  <repositories>
-    <repository>
-      <id>netflix-candidates</id>
-      <name>Netflix Candidates</name>
-      <url>https://artifactory-oss.prod.netflix.net/artifactory/maven-oss-candidates</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
-
   <build>
     <plugins>
       <plugin>
@@ -74,6 +61,14 @@
               <artifactId>lombok</artifactId>
             </exclude>
           </excludes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>16</source>
+          <target>16</target>
         </configuration>
       </plugin>
     </plugins>

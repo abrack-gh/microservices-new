@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a1cbadf-93d8-4f9d-a816-233737959d45" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3a1cbadf-93d8-4f9d-a816-233737959d45" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,7 +51,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "spring.configuration.checksum": "052b0a0301d59f902d81020490e7b97d",
+    "spring.configuration.checksum": "34b79dcbf0dad1b177737a2fd4480264",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -77,7 +75,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.ApiGatewayApplication">
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="api-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ab.apigateway.ApiGatewayApplication" />
@@ -125,6 +123,7 @@
       <workItem from="1689089714138" duration="1290000" />
       <workItem from="1689091527765" duration="16554000" />
       <workItem from="1689322167207" duration="6186000" />
+      <workItem from="1689605486693" duration="1211000" />
     </task>
     <servers />
   </component>

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a1cbadf-93d8-4f9d-a816-233737959d45" name="Changes" comment="" />
+    <list default="true" id="3a1cbadf-93d8-4f9d-a816-233737959d45" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,6 +67,9 @@
       <recent name="$PROJECT_DIR$/product-service" />
       <recent name="$PROJECT_DIR$/order-service" />
       <recent name="$PROJECT_DIR$/inventory-service" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="config" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.ab.orderservice.dto" />
@@ -123,7 +130,7 @@
       <workItem from="1689089714138" duration="1290000" />
       <workItem from="1689091527765" duration="16554000" />
       <workItem from="1689322167207" duration="6186000" />
-      <workItem from="1689605486693" duration="1211000" />
+      <workItem from="1689605486693" duration="3639000" />
     </task>
     <servers />
   </component>

@@ -3,10 +3,14 @@ package com.ab.orderservice.service;
 import com.ab.orderservice.dto.InventoryResponse;
 import com.ab.orderservice.dto.OrderLineItemsDTO;
 import com.ab.orderservice.dto.OrderRequest;
+import com.ab.orderservice.event.OrderPlacedEvent;
 import com.ab.orderservice.model.Order;
 import com.ab.orderservice.model.OrderLineItems;
 import com.ab.orderservice.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cloud.sleuth.Span;
+import org.springframework.cloud.sleuth.Tracer;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -22,6 +26,8 @@ public class OrderService {
 
     private final OrderRepository orderRepository;
     private final WebClient.Builder webClientBuilder;
+    private final Tracer tracer;
+    private final KafkaTemplate<String, OrderPlacedEvent> kafkaTemplate;
 
     public String placeOrder(OrderRequest orderRequest) {
 
@@ -39,6 +45,8 @@ public class OrderService {
                 .toList();
 
 
+        Span inventoryServiceLookup = tracer.nextSpan().name("Inventory service lookup");
+
         //Call inventory service, and place order if product in stock.
         InventoryResponse[] inventoryResponseArray = webClientBuilder.build().get()
                 .uri("http://inventory-service/api/inventory",
@@ -53,6 +61,7 @@ public class OrderService {
 
         if(allProductsInStock){
             orderRepository.save(order);
+            kafkaTemplate.send("notificationTopic", new OrderPlacedEvent(order.getOrderNumber()));
             return "Order placed successfully!";
         } else {
             throw new IllegalArgumentException("Product not available.");

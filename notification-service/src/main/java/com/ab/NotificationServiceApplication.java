@@ -18,7 +18,6 @@ public class NotificationServiceApplication {
         //send email notification
         log.info("Received notification for {}", orderPlacedEvent.getOrderNumber());
 
-
     }
 
 
